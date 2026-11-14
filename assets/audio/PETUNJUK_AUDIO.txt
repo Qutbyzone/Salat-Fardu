@@ -1,0 +1,12 @@
+PETUNJUK ASET AUDIO:
+====================
+Aplikasi MPI ini telah dilengkapi dengan sistem audio ganda:
+1. Suara Text-to-Speech (TTS) Karakter Anak-Anak otomatis yang langsung berbicara menggunakan Bahasa Indonesia (id-ID) untuk menyapa murid, membacakan materi salat, dan membaca butir soal kuis.
+2. Web Audio Synthesizer internal yang menghasilkan efek suara lonceng bintang (benar), pop tombol (klik), dan perayaan (fanfare) tanpa perlu unduhan tambahan.
+
+Jika Anda memiliki berkas audio rekaman sendiri (MP3 atau WAV), Anda cukup meletakkannya di folder ini dengan nama:
+- `klik.mp3`     : Efek suara saat tombol ditekan
+- `benar.mp3`    : Efek suara saat jawaban kuis/game benar
+- `salah.mp3`    : Efek suara lembut saat jawaban belum tepat
+- `fanfare.mp3`  : Efek suara selebrasi saat menerima sertifikat
+- `bgm.mp3`      : Musik latar instrumen ceria pelan

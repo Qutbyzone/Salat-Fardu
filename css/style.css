@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap');
+
+:root {
+  --primary-blue: #0284c7;
+  --primary-sky: #38bdf8;
+  --primary-yellow: #fbbf24;
+  --primary-green: #10b981;
+  --accent-pink: #f472b6;
+  --bg-cream: #fffdf5;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  background: radial-gradient(circle at center, #dbeafe 0%, #bfdbfe 100%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 16:9 Ratio Container */
+.screen-container {
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(100vh, calc(100vw * (9 / 16)));
+  aspect-ratio: 16 / 9;
+  background-color: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35),
+              0 0 0 10px rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3D Toy Button */
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  border-radius: 20px;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  outline: none;
+}
+
+.btn-3d-yellow {
+  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 100%);
+  color: #78350f;
+  box-shadow: 0 6px 0 #b45309, 0 12px 16px rgba(0,0,0,0.2);
+}
+.btn-3d-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #b45309, 0 16px 20px rgba(0,0,0,0.25);
+}
+.btn-3d-yellow:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #b45309, 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.btn-3d-blue {
+  background: linear-gradient(180deg, #7dd3fc 0%, #0284c7 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 0 #0369a1, 0 12px 16px rgba(0,0,0,0.2);
+}
+.btn-3d-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #0369a1, 0 16px 20px rgba(0,0,0,0.25);
+}
+.btn-3d-blue:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #0369a1, 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.btn-3d-green {
+  background: linear-gradient(180deg, #6ee7b7 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 0 #047857, 0 12px 16px rgba(0,0,0,0.2);
+}
+.btn-3d-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #047857, 0 16px 20px rgba(0,0,0,0.25);
+}
+.btn-3d-green:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #047857, 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.btn-3d-pink {
+  background: linear-gradient(180deg, #f472b6 0%, #db2777 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 0 #9f1239, 0 12px 16px rgba(0,0,0,0.2);
+}
+.btn-3d-pink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #9f1239, 0 16px 20px rgba(0,0,0,0.25);
+}
+.btn-3d-pink:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #9f1239, 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* 3D Round Control Button */
+.btn-control-3d {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 4px 0 #cbd5e1, 0 8px 15px rgba(0,0,0,0.1);
+  transition: all 0.15s ease;
+  border: 2px solid #f1f5f9;
+}
+.btn-control-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #cbd5e1, 0 12px 18px rgba(0,0,0,0.15);
+}
+.btn-control-3d:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #cbd5e1, 0 3px 5px rgba(0,0,0,0.1);
+}
+
+/* 3D Card */
+.card-3d {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.12),
+              0 0 0 3px #f1f5f9;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+.card-3d:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 30px -8px rgba(15, 23, 42, 0.18),
+              0 0 0 4px #bae6fd;
+}
+
+/* Floating animation */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.anim-float {
+  animation: floatGentle 3.5s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseGentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.anim-pulse {
+  animation: pulseGentle 2s ease-in-out infinite;
+}
+
+/* Slide Transition Screen */
+.screen-view {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.screen-view.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* Modal Popup */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 50;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 4px #e0f2fe;
+  transform: scale(0.85);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+/* Shake Animation for incorrect feedback */
+@keyframes shakeSoft {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+.anim-shake {
+  animation: shakeSoft 0.4s ease-in-out;
+}
+
+/* Drag & Drop Enhancements */
+.drag-card {
+  user-select: none;
+  -webkit-user-drag: element;
+  cursor: grab;
+}
+.drag-card:active {
+  cursor: grabbing;
+}
+.drop-slot {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.drop-slot.drag-over {
+  border-color: #059669;
+  background-color: #d1fae5;
+  transform: scale(1.04);
+}
+
+
+/* Latar visual bersama seluruh halaman (cover tetap memakai cover-masjid) */
+.screen-view:not(#screen-cover) {
+  background-image: linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)), url('../assets/images/background-halaman.png') !important;
+  background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;
+}
+#screen-cover { padding: clamp(10px, 2vw, 24px); }
+#screen-cover > img { object-fit: cover; object-position: center center; }
+.menu-grid .card-3d { min-height: 122px; cursor: pointer; }
+.menu-grid .card-3d:hover { transform: translateY(-3px) scale(1.015); }
+#screen-gerakan, #screen-bacaan { gap: 8px; }
+#posture-buttons button, #reading-buttons button { min-height: 38px; padding: 7px 5px; border-radius: 12px; background: white; border: 2px solid #c4b5fd; color: #4c1d95; font-size: clamp(10px, 1vw, 13px); font-weight: 700; box-shadow: 0 3px 0 rgba(109,40,217,.12); }
+#reading-buttons button { border-color: #a5f3fc; color: #155e75; }
+#posture-buttons button.active, #reading-buttons button.active { background: #dbeafe; border-color: #0284c7; box-shadow: 0 0 0 2px rgba(2,132,199,.18); }
+.reading-card { max-height: 66%; }
+.arabic-text { font-family: 'Times New Roman', serif; line-height: 1.9; }
+@media (max-aspect-ratio: 4/3) { .screen-container { border-radius: 0; box-shadow: none; } }
+@media (max-height: 650px) { .menu-grid .card-3d { min-height: 95px; padding: 8px; } .menu-grid .card-3d > div { width: 38px; height: 38px; font-size: 20px; } #screen-cover .anim-float { width: 76px; height: 76px; } #screen-cover h1 { font-size: clamp(22px, 4vh, 38px); } }
+
+
+/* =========================================================
+   PERBAIKAN: APLIKASI DAN GAMBAR COVER MEMENUHI LAYAR
+   ========================================================= */
+
+/* Gunakan seluruh area browser, bukan bingkai 16:9 di tengah */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.screen-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Gambar cover memenuhi seluruh halaman cover */
+#screen-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#screen-cover > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+/* Pastikan judul, karakter, dan tombol tetap tampil di atas gambar */
+#screen-cover > :not(img) {
+  z-index: 1;
+}
+
+/* Hilangkan kembali pembatas rasio pada semua ukuran layar */
+@media (max-aspect-ratio: 4/3) {
+  .screen-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+
+/* =========================================================
+   PENYESUAIAN COVER: TOMBOL TEPAT DI BAWAH AVATAR
+   ========================================================= */
+#screen-cover .btn-3d-yellow {
+  align-self: center;
+  margin-top: clamp(6px, 1vh, 12px) !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Jaga jarak tombol tetap rapat pada layar pendek */
+@media (max-height: 650px) {
+  #screen-cover .btn-3d-yellow {
+    margin-top: 4px !important;
+  }
+}
+
+
+/* =========================================================
+   PERBAIKAN FINAL: NAIKKAN TOMBOL MULAI PETUALANGAN
+   Tombol digeser ke atas agar berada dekat di bawah avatar,
+   bukan menempel di area bawah layar.
+   ========================================================= */
+#screen-cover .btn-3d-yellow {
+  position: relative !important;
+  top: clamp(-150px, -17vh, -95px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  align-self: center !important;
+  z-index: 5 !important;
+}
+
+/* Pada layar pendek, geser lebih sedikit agar tombol tidak
+   bertumpuk dengan avatar atau teks. */
+@media (max-height: 650px) {
+  #screen-cover .btn-3d-yellow {
+    top: clamp(-105px, -14vh, -70px) !important;
+  }
+}
+
+
+/* =========================================================
+   V4: POSISI TOMBOL DI TENGAH COVER, TEPAT DI BAWAH AVATAR
+   Gunakan posisi absolut agar tidak terdorong ke bawah oleh
+   susunan elemen/flex pada cover.
+   ========================================================= */
+#screen-cover .btn-3d-yellow {
+  position: absolute !important;
+  top: 72% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  align-self: auto !important;
+  z-index: 10 !important;
+  white-space: nowrap;
+}
+
+/* Sedikit penyesuaian untuk layar yang lebih pendek */
+@media (max-height: 650px) {
+  #screen-cover .btn-3d-yellow {
+    top: 70% !important;
+  }
+}

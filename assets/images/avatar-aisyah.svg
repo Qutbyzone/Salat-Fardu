@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="aiSkin" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="70%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </radialGradient>
+    <linearGradient id="aiHijab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="aiDress" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbcfe8"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="aiClay">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#581c87" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background Bubble -->
+  <circle cx="100" cy="100" r="90" fill="#f3e8ff" filter="url(#aiClay)"/>
+
+  <!-- Body -->
+  <path d="M40 190 Q100 155 160 190 L165 200 L35 200 Z" fill="url(#aiDress)" filter="url(#aiClay)"/>
+
+  <!-- Hijab Drape -->
+  <path d="M45 150 Q100 195 155 150 Q165 175 140 195 Q100 205 60 195 Z" fill="url(#aiHijab)" filter="url(#aiClay)"/>
+
+  <!-- Head Hijab 3D -->
+  <path d="M42 95 C42 45 158 45 158 95 C158 135 150 170 100 170 C50 170 42 135 42 95 Z" fill="url(#aiHijab)" filter="url(#aiClay)"/>
+
+  <!-- Face Opening -->
+  <ellipse cx="100" cy="102" rx="40" ry="46" fill="url(#aiSkin)"/>
+
+  <!-- Ciput Hijab -->
+  <path d="M60 88 Q100 65 140 88 Q100 75 60 88 Z" fill="#fef08a" opacity="0.95"/>
+
+  <!-- Cheeks -->
+  <circle cx="72" cy="118" r="9" fill="#f43f5e" opacity="0.38"/>
+  <circle cx="128" cy="118" r="9" fill="#f43f5e" opacity="0.38"/>
+
+  <!-- Eyes -->
+  <ellipse cx="78" cy="104" rx="8" ry="11" fill="#3b0764"/>
+  <circle cx="80" cy="100" r="3.5" fill="#ffffff"/>
+  <circle cx="75" cy="108" r="1.5" fill="#ffffff"/>
+  <path d="M70 96 L64 92" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round"/>
+
+  <ellipse cx="122" cy="104" rx="8" ry="11" fill="#3b0764"/>
+  <circle cx="124" cy="100" r="3.5" fill="#ffffff"/>
+  <circle cx="119" cy="108" r="1.5" fill="#ffffff"/>
+  <path d="M130 96 L136 92" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Eyebrows -->
+  <path d="M70 88 Q80 83 90 88" stroke="#581c87" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M110 88 Q120 83 130 88" stroke="#581c87" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Smile -->
+  <path d="M88 122 Q100 136 112 122" stroke="#9f1239" stroke-width="3.5" fill="#f43f5e" stroke-linecap="round"/>
+  <path d="M93 124 Q100 130 107 124" fill="#ffffff"/>
+
+  <!-- Cute Star Brooch -->
+  <g transform="translate(62, 72) scale(0.6)" filter="url(#aiClay)">
+    <polygon points="0,-15 4,-4 15,-4 7,3 10,14 0,7 -10,14 -7,3 -15,-4 -4,-4" fill="#fef08a"/>
+  </g>
+</svg>

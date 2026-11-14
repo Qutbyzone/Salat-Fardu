@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="skinGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="70%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </radialGradient>
+    <linearGradient id="peciGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="clay">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background Bubble -->
+  <circle cx="100" cy="100" r="90" fill="#e0f2fe" filter="url(#clay)"/>
+
+  <!-- Body / Baju Koko -->
+  <path d="M45 190 Q100 155 155 190 L160 200 L40 200 Z" fill="url(#shirtGrad)" filter="url(#clay)"/>
+  <rect x="92" y="165" width="16" height="30" rx="3" fill="#ffffff" opacity="0.9"/>
+  <!-- Koko Collar -->
+  <path d="M80 160 Q100 175 120 160" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <rect x="85" y="130" width="30" height="25" rx="10" fill="#fdba74"/>
+
+  <!-- Head with 3D Skin -->
+  <circle cx="100" cy="98" r="50" fill="url(#skinGrad)" filter="url(#clay)"/>
+
+  <!-- Cute Ears -->
+  <circle cx="48" cy="102" r="12" fill="#fdba74"/>
+  <circle cx="48" cy="102" r="6" fill="#fb923c"/>
+  <circle cx="152" cy="102" r="12" fill="#fdba74"/>
+  <circle cx="152" cy="102" r="6" fill="#fb923c"/>
+
+  <!-- Rosy Cheeks -->
+  <circle cx="70" cy="115" r="9" fill="#f43f5e" opacity="0.35"/>
+  <circle cx="130" cy="115" r="9" fill="#f43f5e" opacity="0.35"/>
+
+  <!-- Big 3D Cartoon Eyes -->
+  <!-- Left Eye -->
+  <ellipse cx="78" cy="98" rx="8" ry="11" fill="#0f172a"/>
+  <circle cx="80" cy="94" r="3.5" fill="#ffffff"/>
+  <circle cx="75" cy="102" r="1.5" fill="#ffffff"/>
+  <!-- Right Eye -->
+  <ellipse cx="122" cy="98" rx="8" ry="11" fill="#0f172a"/>
+  <circle cx="124" cy="94" r="3.5" fill="#ffffff"/>
+  <circle cx="119" cy="102" r="1.5" fill="#ffffff"/>
+
+  <!-- Cute Eyebrows -->
+  <path d="M68 82 Q78 77 88 82" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M112 82 Q122 77 132 82" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Cheerful Smile -->
+  <path d="M88 116 Q100 130 112 116" stroke="#991b1b" stroke-width="3.5" fill="#e11d48" stroke-linecap="round"/>
+  <path d="M93 118 Q100 124 107 118" fill="#ffffff"/>
+
+  <!-- 3D Peci / Songkok -->
+  <g filter="url(#clay)">
+    <path d="M50 78 Q100 60 150 78 L148 50 Q100 35 52 50 Z" fill="url(#peciGrad)"/>
+    <!-- Gold embroidery trim -->
+    <path d="M51 75 Q100 58 149 75" stroke="url(#goldTrim)" stroke-width="4" fill="none"/>
+  </g>
+</svg>

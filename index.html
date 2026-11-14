@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Seru Mengenal Salat Fardu</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom 3D Styling -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Main 16:9 Screen Container -->
+  <div class="screen-container">
+
+    <!-- ==================== 1. COVER / THUMBNAIL SCREEN (16:9 FULL COVER) ==================== -->
+    <div id="screen-cover" class="screen-view active flex flex-col justify-between items-center text-center relative overflow-hidden">
+      <!-- Fullscreen 16:9 Mosque Cover Background -->
+      <img src="assets/images/cover-masjid.jpg" alt="Cover Masjid 16:9" class="absolute inset-0 w-full h-full object-cover">
+      
+      <!-- Gentle gradient overlay to guarantee text legibility -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/35 pointer-events-none"></div>
+
+      <!-- Center Title & Mascots -->
+      <div class="z-10 flex flex-col items-center my-auto px-4 max-w-3xl">
+        <h1 class="text-3xl md:text-5xl font-black text-white tracking-wide drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
+          Belajar Seru Mengenal Salat Fardu
+        </h1>
+        <p class="text-amber-200 text-sm md:text-lg font-bold mt-2 drop-shadow-md max-w-xl">
+          Hai teman-teman! Yuk, berpetualang mengenal lima waktu sholat fardu dan jumlah rakaatnya!
+        </p>
+
+        <!-- 3D Mascots Preview -->
+        <div class="flex items-center justify-center gap-6 mt-4">
+          <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl anim-float bg-sky-100">
+            <img src="assets/images/avatar-ahmad.jpg" alt="Ahmad" class="w-full h-full object-cover">
+          </div>
+          <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl anim-float bg-pink-100" style="animation-delay: 0.6s;">
+            <img src="assets/images/avatar-fatimah.jpg" alt="Fatimah" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Action Button -->
+      <div class="z-10 mb-6 flex flex-col items-center">
+        <button id="btn-cover-start" class="btn-3d btn-3d-yellow px-10 py-4 text-xl md:text-2xl anim-pulse shadow-2xl">
+          <span>🚀 Mulai Petualangan!</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== 2. SCREEN LOGIN & PILIH AVATAR ==================== -->
+    <div id="screen-login" class="screen-view flex flex-col justify-between items-center bg-gradient-to-b from-amber-50 to-sky-100 p-5">
+      <!-- Top VO Bar -->
+      <div class="w-full flex justify-end">
+        <button class="btn-screen-vo btn-control-3d text-sm" title="Putar Suara Panduan">
+          🔊
+        </button>
+      </div>
+
+      <div class="card-3d max-w-lg w-full p-6 md:p-8 flex flex-col items-center text-center my-auto">
+        <span class="text-3xl">🌟</span>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-800 mt-2">
+          Siapa Namamu, Sahabat pintar?
+        </h2>
+        <p class="text-slate-600 text-xs md:text-sm mt-1">
+          Pilih karakter favoritmu dan ketik namamu agar skormu tercatat ya!
+        </p>
+
+        <!-- 4 Avatar Choices -->
+        <div class="grid grid-cols-4 gap-3 md:gap-4 my-5 w-full">
+          <div class="avatar-choice p-2 rounded-2xl border-2 border-slate-200 cursor-pointer transition-all ring-4 ring-amber-400 scale-105 bg-amber-100 flex flex-col items-center" data-avatar="assets/images/avatar-ahmad.jpg">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow">
+              <img src="assets/images/avatar-ahmad.jpg" alt="Ahmad" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold text-slate-700 mt-1">Ahmad</span>
+          </div>
+          <div class="avatar-choice p-2 rounded-2xl border-2 border-slate-200 cursor-pointer transition-all hover:bg-slate-50 flex flex-col items-center" data-avatar="assets/images/avatar-fatimah.jpg">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow">
+              <img src="assets/images/avatar-fatimah.jpg" alt="Fatimah" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold text-slate-700 mt-1">Fatimah</span>
+          </div>
+          <div class="avatar-choice p-2 rounded-2xl border-2 border-slate-200 cursor-pointer transition-all hover:bg-slate-50 flex flex-col items-center" data-avatar="assets/images/avatar-ali.jpg">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow">
+              <img src="assets/images/avatar-ali.jpg" alt="Ali" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold text-slate-700 mt-1">Ali</span>
+          </div>
+          <div class="avatar-choice p-2 rounded-2xl border-2 border-slate-200 cursor-pointer transition-all hover:bg-slate-50 flex flex-col items-center" data-avatar="assets/images/avatar-aisyah.jpg">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow">
+              <img src="assets/images/avatar-aisyah.jpg" alt="Aisyah" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold text-slate-700 mt-1">Aisyah</span>
+          </div>
+        </div>
+
+        <!-- Name Input Field -->
+        <div class="w-full mb-5">
+          <input type="text" id="input-student-name" maxlength="18" placeholder="Ketik nama panggilanmu di sini..." class="w-full text-center py-3 px-4 text-lg font-bold text-slate-800 bg-slate-50 border-2 border-slate-300 rounded-2xl focus:outline-none focus:border-sky-500 focus:bg-white transition-all shadow-inner">
+        </div>
+
+        <!-- Submit Button -->
+        <button id="btn-login-submit" class="btn-3d btn-3d-green w-full py-3.5 text-lg">
+          <span>Ayo Masuk ke Ruang Belajar! ✨</span>
+        </button>
+      </div>
+
+      <div class="h-4"></div>
+    </div>
+
+    <!-- ==================== 3. SCREEN BERANDA (MAIN MENU) ==================== -->
+    <div id="screen-home" class="screen-view flex flex-col justify-between bg-gradient-to-b from-sky-50 via-white to-amber-50 p-5 md:p-6">
+      <!-- Top Navigation Bar -->
+      <div class="flex items-center justify-between w-full border-b pb-3 border-slate-200">
+        <!-- Student Identity Greeting -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-sky-400 bg-white shadow">
+            <img id="home-avatar-img" src="assets/images/avatar-ahmad.jpg" alt="Avatar" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <span class="text-xs font-semibold text-slate-500 block">Selamat Belajar</span>
+            <span id="home-student-name" class="text-lg md:text-xl font-black text-sky-900 block">Murid Hebat</span>
+          </div>
+        </div>
+
+        <!-- Right Side Control Buttons: Tombol Info di POJOK PALING KANAN -->
+        <div class="flex items-center gap-2">
+          <!-- Voice Over Replay -->
+          <button class="btn-screen-vo btn-control-3d text-sm" title="Putar Suara Panduan">
+            🔊
+          </button>
+          <!-- Tombol Audio Mute / Unmute -->
+          <button id="btn-toggle-audio" title="Matikan/Nyalakan Suara" class="btn-control-3d text-lg">
+            🔔
+          </button>
+          <!-- Tombol (i) Informasi Kreator & Tujuan Pembelajaran di POJOK PALING KANAN -->
+          <button id="btn-creator-info" title="Informasi Kreator & Tujuan Pembelajaran" class="btn-control-3d text-sky-700 bg-sky-100 hover:bg-sky-200 font-extrabold text-lg border-2 border-sky-300 shadow-md">
+            i
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Grid Title -->
+      <div class="text-center my-2">
+        <h2 class="text-xl md:text-2xl font-black text-slate-800">
+          Pilih Petualangan Serumu!
+        </h2>
+        <p class="text-xs md:text-sm text-slate-600 font-medium">
+          Sentuh salah satu kotak di bawah untuk mulai bermain dan belajar.
+        </p>
+      </div>
+
+      <!-- Enam menu utama -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 my-auto menu-grid">
+        <div id="menu-card-eksplorasi" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-sky-50 to-white border-2 border-sky-200"><div class="w-12 h-12 rounded-2xl bg-sky-400 text-white flex items-center justify-center text-2xl shadow-md mb-1">🕌</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Mengenal 5 Salat</h3><p class="text-xs text-slate-500 mt-1">Waktu dan jumlah rakaat</p></div>
+        <div id="menu-card-gerakan" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-violet-50 to-white border-2 border-violet-200"><div class="w-12 h-12 rounded-2xl bg-violet-400 text-white flex items-center justify-center text-2xl shadow-md mb-1">🧎</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Jelajah Gerakan</h3><p class="text-xs text-slate-500 mt-1">Kenali setiap gerakan salat</p></div>
+        <div id="menu-card-bacaan" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-cyan-50 to-white border-2 border-cyan-200"><div class="w-12 h-12 rounded-2xl bg-cyan-500 text-white flex items-center justify-center text-2xl shadow-md mb-1">📖</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Kenali Bacaan</h3><p class="text-xs text-slate-500 mt-1">Arab, latin dan terjemah</p></div>
+        <div id="menu-card-urutan" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-emerald-50 to-white border-2 border-emerald-200"><div class="w-12 h-12 rounded-2xl bg-emerald-400 text-white flex items-center justify-center text-2xl shadow-md mb-1">🧩</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Susun Gerakan</h3><p class="text-xs text-slate-500 mt-1">Susun urutan gerakan salat</p></div>
+        <div id="menu-card-pairing" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-amber-50 to-white border-2 border-amber-200"><div class="w-12 h-12 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-2xl shadow-md mb-1">🔢</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Pasangkan Rakaat</h3><p class="text-xs text-slate-500 mt-1">Cocokkan salat dan rakaat</p></div>
+        <div id="menu-card-kuis" class="card-3d p-3 flex flex-col items-center text-center bg-gradient-to-b from-rose-50 to-white border-2 border-rose-200"><div class="w-12 h-12 rounded-2xl bg-rose-400 text-white flex items-center justify-center text-2xl shadow-md mb-1">⭐</div><h3 class="font-extrabold text-slate-800 text-sm md:text-base">Kuis Bintang</h3><p class="text-xs text-slate-500 mt-1">Uji pengetahuanmu</p></div>
+      </div>
+
+
+    </div>
+
+    <!-- ==================== 4. SCREEN EKSPLORASI 5 WAKTU SALAT ==================== -->
+    <div id="screen-eksplorasi" class="screen-view flex flex-col justify-between bg-sky-50 p-5">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-3 border-b border-sky-200">
+        <button class="btn-back-to-home btn-3d btn-3d-blue py-2 px-4 text-sm">
+          ← Kembali
+        </button>
+        <h2 class="text-xl font-black text-sky-950">Mengenal 5 Salat Fardu</h2>
+        <button class="btn-screen-vo btn-control-3d text-sm" title="Putar Suara Panduan">
+          🔊
+        </button>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto items-center">
+        <!-- Left Buttons (5 Prayers) -->
+        <div id="salat-cards-list" class="md:col-span-4 flex flex-col gap-2">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Right 3D Visual Card -->
+        <div class="md:col-span-8 card-3d p-5 flex flex-col md:flex-row items-center gap-5 bg-white border-2 border-sky-200">
+          <div class="w-full md:w-1/2 h-48 md:h-56 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-inner flex items-center justify-center bg-sky-100">
+            <img id="eksplorasi-img" src="assets/images/visual-salat-subuh.jpg" alt="Visual Salat" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full md:w-1/2 flex flex-col gap-2 text-left">
+            <span id="eksplorasi-rakaat" class="inline-block px-3 py-1 bg-amber-400 text-amber-900 font-extrabold text-sm rounded-full w-max shadow-sm">
+              2 Rakaat
+            </span>
+            <h3 id="eksplorasi-title" class="text-2xl font-black text-slate-800">
+              Salat Subuh
+            </h3>
+            <p id="eksplorasi-time" class="text-sm font-semibold text-sky-700">
+              Saat fajar terbit di pagi hari
+            </p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Salat fardu adalah ibadah wajib yang dikerjakan setiap hari oleh umat Islam. Mari kita dirikan salat dengan khusyuk dan tepat waktu ya!
+            </p>
+            <button onclick="GamesMaster.speakSelectedPrayer()" class="btn-3d btn-3d-yellow py-2 px-4 text-xs font-bold w-max mt-2">
+              🔊 Dengarkan Penjelasan
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Note -->
+      <div class="text-center text-xs text-slate-500 font-bold">
+        🔊 Ketuk setiap nama salat untuk melihat gambar dan mendengarkan suaranya!
+      </div>
+    </div>
+
+    <!-- Jelajah Gerakan Salat -->
+    <div id="screen-gerakan" class="screen-view p-4 md:p-5">
+      <div class="flex items-center justify-between pb-3 border-b border-violet-200"><button class="btn-back-to-home btn-3d btn-3d-blue py-2 px-4 text-sm">← Kembali</button><h2 class="text-lg md:text-xl font-black text-violet-950">Jelajah Gerakan Salat</h2><button class="btn-screen-vo btn-control-3d text-sm">🔊</button></div>
+      <div class="grid grid-cols-3 md:grid-cols-5 gap-2 py-3" id="posture-buttons"></div>
+      <div class="card-3d bg-white/95 border-2 border-violet-200 p-3 md:p-4 flex flex-col md:flex-row gap-4 items-center my-auto">
+        <img id="posture-image" src="assets/images/gerakan-berdiri-tegak.jpg" alt="Gerakan salat" class="w-full md:w-1/2 h-44 md:h-64 object-contain rounded-xl bg-violet-50">
+        <div class="text-center md:text-left"><h3 id="posture-title" class="text-xl md:text-2xl font-black text-violet-900">Berdiri Tegak</h3><p id="posture-description" class="text-sm md:text-base text-slate-700 mt-2">Berdiri tegak menghadap kiblat dengan tenang dan pandangan ke tempat sujud.</p><button id="posture-speak" class="btn-3d btn-3d-yellow px-5 py-2 mt-3">🔊 Dengarkan Penjelasan</button></div>
+      </div>
+    </div>
+
+    <!-- Kenali Bacaan Salat -->
+    <div id="screen-bacaan" class="screen-view p-4 md:p-5">
+      <div class="flex items-center justify-between pb-3 border-b border-cyan-200"><button class="btn-back-to-home btn-3d btn-3d-blue py-2 px-4 text-sm">← Kembali</button><h2 class="text-lg md:text-xl font-black text-cyan-950">Kenali Bacaan Salat</h2><button class="btn-screen-vo btn-control-3d text-sm">🔊</button></div>
+      <div id="reading-buttons" class="grid grid-cols-3 md:grid-cols-5 gap-2 py-3"></div>
+      <div class="card-3d bg-white/95 border-2 border-cyan-200 p-3 md:p-4 my-auto overflow-y-auto reading-card">
+        <h3 id="reading-title" class="text-lg md:text-xl font-black text-cyan-900 mb-2">Takbiratul Ihram</h3>
+        <div class="space-y-2"><section class="bg-cyan-50 rounded-xl p-3"><div class="text-xs font-bold text-cyan-800 mb-1">ARAB</div><p id="reading-arabic" dir="rtl" lang="ar" class="arabic-text text-right text-2xl md:text-3xl leading-loose">اللّٰهُ أَكْبَرُ</p></section>
+        <section class="bg-amber-50 rounded-xl p-3"><div class="text-xs font-bold text-amber-800 mb-1">LATIN</div><p id="reading-latin" class="text-sm md:text-base font-semibold text-slate-800">Allāhu akbar.</p></section>
+        <section class="bg-emerald-50 rounded-xl p-3"><div class="text-xs font-bold text-emerald-800 mb-1">ARTI</div><p id="reading-meaning" class="text-sm md:text-base text-slate-700">Allah Mahabesar.</p></section></div>
+        <button id="reading-speak" class="btn-3d btn-3d-yellow px-5 py-2 mt-3">🔊 Dengarkan Bacaan</button>
+      </div>
+    </div>
+
+    <!-- ==================== 5. SCREEN GAME PASANGKAN RAKAAT ==================== -->
+    <div id="screen-pairing" class="screen-view flex flex-col justify-between bg-amber-50 p-5">
+      <div class="flex items-center justify-between pb-3 border-b border-amber-200">
+        <button class="btn-back-to-home btn-3d btn-3d-yellow py-2 px-4 text-sm">
+          ← Kembali
+        </button>
+        <h2 class="text-xl font-black text-amber-950">Pasangkan Jumlah Rakaat</h2>
+        <button class="btn-screen-vo btn-control-3d text-sm" title="Putar Suara Panduan">
+          🔊
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto items-center max-w-3xl mx-auto w-full">
+        <!-- Sisi Kiri: 5 Salat -->
+        <div id="pairing-prayers" class="flex flex-col gap-2.5">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Sisi Kanan: Pilihan Rakaat -->
+        <div class="flex flex-col gap-3">
+          <span class="text-xs font-bold text-slate-500 text-center uppercase tracking-wider">Ketuk Jumlah Rakaat:</span>
+          
+          <button onclick="GamesMaster.checkPairing(2, this)" class="btn-3d py-4 px-6 bg-gradient-to-r from-sky-400 to-sky-500 text-white rounded-2xl font-black text-xl shadow flex items-center justify-between border-2 border-sky-600 hover:scale-102">
+            <span>2 Rakaat</span>
+            <span class="text-2xl">✌️</span>
+          </button>
+
+          <button onclick="GamesMaster.checkPairing(3, this)" class="btn-3d py-4 px-6 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-2xl font-black text-xl shadow flex items-center justify-between border-2 border-pink-600 hover:scale-102">
+            <span>3 Rakaat</span>
+            <span class="text-2xl">🤟</span>
+          </button>
+
+          <button onclick="GamesMaster.checkPairing(4, this)" class="btn-3d py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-2xl font-black text-xl shadow flex items-center justify-between border-2 border-amber-600 hover:scale-102">
+            <span>4 Rakaat</span>
+            <span class="text-2xl">🖐️</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Feedback Box -->
+      <div id="pairing-feedback" class="text-center font-bold text-slate-700 text-sm">
+        Pilih nama salat di kiri, lalu ketuk jumlah rakaatnya di kanan!
+      </div>
+    </div>
+
+    <!-- ==================== 6. SCREEN GAME SUSUN GERAKAN SALAT (DRAG & DROP) ==================== -->
+    <div id="screen-urutan" class="screen-view flex flex-col justify-between bg-gradient-to-b from-emerald-50 via-teal-50 to-white p-4 md:p-5">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-2 border-b border-emerald-200">
+        <button class="btn-back-to-home btn-3d btn-3d-green py-1.5 px-3.5 text-xs">
+          ← Kembali
+        </button>
+        <div class="flex items-center gap-2">
+          <span class="text-base md:text-lg font-black text-emerald-950">
+            🎯 Susun Gerakan Salat
+          </span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="GamesMaster.initGameDragDrop()" class="btn-3d bg-white text-emerald-700 border border-emerald-300 py-1.5 px-3 text-xs font-bold rounded-xl shadow-sm">
+            🔄 Acak Ulang
+          </button>
+          <button class="btn-screen-vo btn-control-3d text-sm w-9 h-9" title="Putar Suara Panduan">
+            🔊
+          </button>
+        </div>
+      </div>
+
+      <!-- Instruction / Feedback Bar -->
+      <div id="drag-drop-feedback" class="text-center font-bold text-emerald-900 text-xs md:text-sm py-1">
+        Tarik kartu gerakan di atas, lalu jatuhkan (Drop) ke kotak nomor urutan yang benar!
+      </div>
+
+      <!-- Pool Kartu Sumber (Draggable) -->
+      <div class="w-full flex items-center justify-start md:justify-center gap-2 md:gap-3 overflow-x-auto py-2 px-1 border-b border-emerald-100 min-h-[95px] md:min-h-[110px]" id="drag-source-pool">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- 10 Target Drop Slots (Numbered Slots 1 - 10) -->
+      <div class="w-full grid grid-cols-5 md:grid-cols-10 gap-2 my-auto" id="drop-target-slots">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="text-center text-[11px] text-slate-500 font-semibold py-0.5">
+        💡 Tip: Kamu bisa menyeret kartu (*drag & drop*) atau mengetuk kartu lalu mengetuk kotak nomornya!
+      </div>
+    </div>
+
+    <!-- ==================== 7. SCREEN KUIS BINTANG (5 SOAL) ==================== -->
+    <div id="screen-kuis" class="screen-view flex flex-col justify-between bg-gradient-to-b from-sky-50 to-purple-50 p-5">
+      <!-- Quiz Header -->
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+        <button class="btn-back-to-home btn-3d btn-3d-blue py-1.5 px-3 text-xs">
+          ← Beranda
+        </button>
+        <span id="quiz-num" class="font-extrabold text-sky-900 text-sm md:text-base bg-white px-4 py-1 rounded-full border border-sky-300 shadow-sm">
+          Soal 1 dari 5
+        </span>
+        <button id="btn-quiz-speak" title="Dengarkan Soal Ini" class="btn-control-3d text-sm w-9 h-9">
+          🔊
+        </button>
+      </div>
+
+      <!-- Question Card -->
+      <div class="card-3d max-w-xl w-full mx-auto p-5 md:p-6 bg-white border-2 border-sky-200 text-center my-auto flex flex-col items-center">
+        <div id="quiz-icon" class="text-4xl mb-2">🕌</div>
+        <h3 id="quiz-question" class="text-base md:text-lg font-bold text-slate-800 leading-snug">
+          Pertanyaan kuis akan muncul di sini...
+        </h3>
+
+        <!-- Options Container -->
+        <div id="quiz-options" class="flex flex-col gap-2.5 w-full mt-5">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="text-center text-xs text-slate-500 font-semibold">
+        ⭐ Setiap jawaban benar mendapatkan 20 poin (Skor Maksimal 100).
+      </div>
+    </div>
+
+    <!-- ==================== 8. SCREEN SERTIFIKAT PRESTASI ==================== -->
+    <div id="screen-sertifikat" class="screen-view flex flex-col justify-center items-center bg-gradient-to-b from-amber-100 via-yellow-50 to-sky-100 p-6">
+      <div class="card-3d max-w-lg w-full p-6 md:p-8 bg-white border-4 border-amber-300 shadow-2xl flex flex-col items-center text-center relative overflow-hidden">
+        <!-- Top VO Replay -->
+        <button class="btn-screen-vo absolute top-3 right-3 btn-control-3d text-sm w-8 h-8" title="Dengarkan Suara Selamat">
+          🔊
+        </button>
+
+        <div class="text-4xl mb-1 anim-bounce">🏆</div>
+        <span class="text-xs font-black tracking-widest text-amber-700 uppercase bg-amber-100 px-4 py-1 rounded-full">
+          Piagam Penghargaan Cilik
+        </span>
+        
+        <h2 class="text-2xl md:text-3xl font-black text-slate-800 mt-2">
+          Juara Cilik Salat Fardu
+        </h2>
+        
+        <p class="text-xs text-slate-500 font-semibold mt-1">Diberikan dengan bangga kepada:</p>
+        
+        <!-- Student Avatar and Name -->
+        <div class="flex items-center gap-3 my-3 bg-sky-50 px-5 py-2.5 rounded-2xl border-2 border-sky-200">
+          <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow">
+            <img id="cert-avatar-img" src="assets/images/avatar-ahmad.jpg" alt="Avatar" class="w-full h-full object-cover">
+          </div>
+          <span id="cert-name" class="text-xl md:text-2xl font-black text-sky-900">Nama Murid</span>
+        </div>
+
+        <!-- Stars and Score -->
+        <div class="flex flex-col items-center gap-1 my-1">
+          <span id="cert-stars" class="text-2xl tracking-widest text-amber-400">⭐⭐⭐⭐⭐</span>
+          <div class="text-xs font-bold text-slate-600">
+            Nilai Akhir: <span id="cert-score" class="text-lg font-black text-emerald-600">100/100</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-600 font-medium italic mt-2 px-4 leading-relaxed">
+          "Hebat sekali! Terus semangat belajar dan jangan lupa selalu mendirikan salat lima waktu dengan tertib ya!"
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-3 mt-5 w-full">
+          <button id="btn-cert-replay" class="btn-3d btn-3d-yellow flex-1 py-3 text-sm">
+            <span>🔄 Main Lagi</span>
+          </button>
+          <button id="btn-cert-home" class="btn-3d btn-3d-green flex-1 py-3 text-sm">
+            <span>🏠 Kembali ke Beranda</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL POPUP: INFO KREATOR & TUJUAN PEMBELAJARAN ==================== -->
+    <div id="modal-creator" class="modal-overlay">
+      <div class="modal-content max-w-lg w-full p-6 md:p-8 text-left relative border-4 border-sky-300 max-h-[90vh] overflow-y-auto">
+        <button id="btn-close-creator-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 font-black text-slate-600 flex items-center justify-center text-base shadow-sm">
+          ×
+        </button>
+
+        <div class="flex items-center gap-3 mb-4 border-b pb-3 border-slate-200">
+          <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl shadow-inner">
+            👨‍🏫
+          </div>
+          <div>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Informasi Bahan Ajar</span>
+            <h3 class="text-lg md:text-xl font-black text-slate-800">Mengenal Salat Fardu</h3>
+          </div>
+        </div>
+
+        <!-- Identitas Kreator -->
+        <div class="mb-4 bg-sky-50 p-3.5 rounded-2xl border border-sky-200">
+          <span class="text-xs font-bold text-sky-800 uppercase tracking-wider block">Kreator Materi</span>
+          <span class="text-base font-extrabold text-sky-950 block mt-0.5">Andriansyah, S.Pd.I</span>
+          <span class="text-xs text-slate-500 block mt-0.5">Pendidikan Agama Islam & Budi Pekerti (Fase A)</span>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <div class="mb-4">
+          <h4 class="text-xs font-extrabold text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span>🎯</span> Tujuan Pembelajaran:
+          </h4>
+          <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-5 leading-relaxed">
+            <li>Murid dapat <strong>mengenal nama-nama 5 waktu salat fardu</strong> dalam sehari semalam secara runtut.</li>
+			<li>Murid dapat <strong>mengetahui bacaan salat fardu</strong> pada setiap gerakannya.</li>
+            <li>Murid dapat <strong>memasangkan jumlah rakaat</strong> pada setiap salat fardu dengan tepat.</li>
+            <li>Murid dapat <strong>mengurutkan langkah gerakan salat</strong> dari berdiri tegak sampai salam melalui tantangan interaktif.</li>
+            <li>Menumbuhkan <strong>motivasi dan kebiasaan beribadah salat</strong> secara tertib sejak dini.</li>
+          </ul>
+        </div>
+
+        <!-- Keterangan Hak Cipta & Aset AI -->
+        <div class="border-t pt-3 border-slate-200">
+          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Aset & Visual</span>
+          <p class="text-[11px] text-slate-500 mt-1 italic leading-relaxed">
+            "Ilustrasi visual 3D bergaya kartun dihasilkan dengan bantuan AI. Seluruh ikon dan efek suara berlisensi royalty-free."
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <audio id="background-music" src="assets/audio/musik-latar-anak.wav" preload="auto" loop></audio>
+
+  <!-- JavaScript Modules -->
+  <script src="js/tts.js"></script>
+  <script src="js/games.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
